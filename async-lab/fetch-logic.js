@@ -1,4 +1,4 @@
-//Voici mon rendu pour le devoir de la Semaine 1.
+/*//Voici mon rendu pour le devoir de la Semaine 1.
 const fetchUserData = async () => {
   console.log("Requete lancee...");
 
@@ -12,7 +12,6 @@ const fetchUserData = async () => {
     const user = await response.json();
 
     console.log(`
- Données reçues avec succès :
  Nom : ${user.name}
  Entreprise : ${user.company.name}
 Email : ${user.email}
@@ -51,7 +50,7 @@ const getFastData = async () => {
   }
 };
 
-/*
+
 1.
 Le code de départ essayait de lire la réponse immédiatement, de manière synchrone.
 L'API fetch() prend du temps pour aller chercher les données sur le réseau. Dans le code initial, JavaScript 
@@ -71,3 +70,38 @@ requête a "réussi" techniquement (car le serveur a répondu). Vérifier `respo
 code de statut HTTP est un vrai succès (entre 200 et 299) avant d'essayer d'extraire les données JSON, ce qui 
 évite des crashs plus loin dans le code.
 */
+
+let student1 = {
+  name: "marie",
+  age: 22,
+  city: "yaounde",
+  skills: ["javascript", "python", "html", "css"],
+};
+let student2 = {
+  name: "paul",
+  age: 25,
+  city: "douala",
+  skills: ["html", "algorithmique", "css"],
+};
+
+const getCity = ({ city }) => city;
+
+const buildProfile = (student = {}, extraSkills) => {
+  const { name, age } = student;
+  const allSkills = [...student.skills, ...extraSkills];
+  return `${name} is ${age} years old and has skills in ${allSkills.join(", ")}.`;
+};
+
+const mergeSudents = (student1, student2) => {
+  return {
+    name: student1.name + " & " + student2.name,
+  };
+};
+
+const collectName = (...students) => {
+  return students.map(({ name }) => name);
+};
+
+console.log(buildProfile(student1, ["react", "dom"]));
+//console.log(mergeSudents(student1, student2));
+console.log(collectName(student1, student2));

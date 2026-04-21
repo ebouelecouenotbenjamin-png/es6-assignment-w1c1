@@ -1,0 +1,294 @@
+/* ====== LAYOUT PRINCIPAL ====== */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== HEADER ====== */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #ff6b6b;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== FILTRES ====== */
+.filters-section {
+  background: linear-gradient(135deg, #f0f0f0, #fafafa);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  border-color: #ff6b6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  color: white;
+  border-color: #ff6b6b;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ====== SECTION FILMS ====== */
+.movies-section {
+  margin-bottom: 40px;
+}
+
+.movies-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+/* ====== MOVIE CARD ====== */
+.movie-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-color: #ff6b6b;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.movie-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+  flex: 1;
+}
+
+.year {
+  background: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.movie-info {
+  margin-bottom: 15px;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.genre,
+.rating {
+  margin: 8px 0;
+  color: #555;
+}
+
+.genre strong {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* ====== BADGES ====== */
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-trending {
+  background: #ff6b6b;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.badge-top-rated {
+  background: #ffd93d;
+  color: #333;
+}
+
+.badge-classic {
+  background: #6c5ce7;
+  color: white;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ====== CAS VIDE ====== */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f5f5, #e3e3e3);
+  border-radius: 12px;
+  color: #666;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.empty-state p:first-child {
+  font-size: 1.4rem;
+}
+
+/* ====== NOMBRE DE FILMS ====== */
+.movie-count {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.movie-count strong {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+/* ====== SECTION ÉDUCATION ====== */
+.education-section {
+  background: linear-gradient(135deg, #e8f4f8, #f0e8f8);
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 5px solid #6c5ce7;
+}
+
+.education-section h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.education-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-section li {
+  padding: 10px 0;
+  color: #555;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.education-section li:last-child {
+  border-bottom: none;
+}
+
+.education-section strong {
+  color: #ff6b6b;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-buttons {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
